@@ -1,6 +1,21 @@
-BIENVENIDOS ESTUDIANTES UDEC 2021 {{ title }}
-<input type="text" [(ngModel)]="title" />
-<input type="button" value="Click me">
-
-
-<app-login></app-login>
+CALCULADORA UDEC 2021 
+<br>
+<input type="number" [(ngModel)]="numero1" /> {{ numero1 }} <br>
+<input type="number" [(ngModel)]="numero2" /> {{ numero2 }} <br>
+<input type="button" value="Sumar" (click)="operar('s')">
+<input type="button" value="Restar" (click)="operar('r')">
+<input type="button" value="Multiplicar" (click)="operar('m')">
+<button type="button" (click)="operar('d')">Dividir</button>
+<br>
+{{ resultado }}
+<br>
+<br>
+<br>
+<input type="text" (keyup)="teclear($event)">
+<br>
+<br>
+<br>
+<br>
+<br>
+----- Componente Login ---
+<app-login [resultadoHija]="resultado"></app-login>
