@@ -7,11 +7,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { FormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatTableModule } from '@angular/material/table';
+import { MaterialModule} from './material/material.module'
 
 @NgModule({
   declarations: [
@@ -24,11 +20,7 @@ import { MatTableModule } from '@angular/material/table';
     AppRoutingModule, 
     FormsModule, 
     NoopAnimationsModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDividerModule,
-    MatProgressBarModule,
-    MatTableModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
