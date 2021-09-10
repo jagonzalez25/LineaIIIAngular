@@ -6,6 +6,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 
 @NgModule({
   declarations: [],
@@ -15,13 +19,19 @@ import { MatTableModule } from '@angular/material/table';
     MatIconModule,
     MatDividerModule,
     MatProgressBarModule,
-    MatTableModule
+    MatTableModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatSidenavModule
   ], exports: [
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
     MatProgressBarModule,
-    MatTableModule
+    MatTableModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatSidenavModule
   ]
 })
 export class MaterialModule { }
