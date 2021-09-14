@@ -8,12 +8,16 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule} from './material/material.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BuscarComponent } from './pages/buscar/buscar.component';
+import { EditarComponent } from './pages/editar/editar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    BuscarComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,
