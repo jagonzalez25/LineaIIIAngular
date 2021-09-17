@@ -16,7 +16,5 @@
   right: 0;
 }
 .example-sidenav-content {
-  display: flex;
-  height: 100%;
-  align-items: center;
+  flex: 1;
 }

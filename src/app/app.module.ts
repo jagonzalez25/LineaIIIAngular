@@ -10,6 +10,7 @@ import { MaterialModule} from './material/material.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { EditarComponent } from './pages/editar/editar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EditarComponent } from './pages/editar/editar.component';
     AppRoutingModule, 
     FormsModule, 
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

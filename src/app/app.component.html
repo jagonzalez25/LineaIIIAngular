@@ -15,7 +15,7 @@
         </button>
 
         <mat-menu #menu="matMenu">
-            <button mat-menu-item routerLink="/perfil">
+            <button mat-menu-item [routerLink]="['/perfil']">
                 <mat-icon>account_box</mat-icon>
                 <span>Mi Perfil</span>
             </button>
@@ -33,19 +33,19 @@
 
         <img src="assets/udec_escudo.png" width="128" style="margin-left: 20px;" />
   
-        <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" routerlink="/buscar">
+        <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/buscar']">
             <mat-icon>search</mat-icon>
             <span>Buscar</span>
         </button>
         <mat-divider></mat-divider>  
         
-        <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" routerlink="/ingresar">
+        <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/ingresar']">
           <mat-icon>manage accounts</mat-icon>
           <span>Ingresar</span>
         </button>
         <mat-divider></mat-divider>  
 
-        <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" routerlink="/editar">
+        <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/editar']">
           <mat-icon>edit</mat-icon>
           <span>Editar</span>
         </button>
