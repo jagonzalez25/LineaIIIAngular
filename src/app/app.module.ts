@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { EditarComponent } from './pages/editar/editar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DepartamentoComponent } from './pages/departamento/departamento.component';
+import { CiudadComponent } from './pages/departamento/ciudad/ciudad.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegistroComponent,
     BuscarComponent,
-    EditarComponent
+    EditarComponent,
+    DepartamentoComponent,
+    CiudadComponent
   ],
   imports: [
     BrowserModule,

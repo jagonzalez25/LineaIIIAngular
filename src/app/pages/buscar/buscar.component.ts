@@ -15,13 +15,6 @@ export class BuscarComponent implements OnInit {
     //Iniciar Variables
     //Llamar metodos
     //Logica Inicial
-    console.log("Antes de llamar el servicio");
-    this.departamentoService.listar().subscribe(data =>{
-       
-        data.forEach(element => {
-            console.log(`Codigo: ${element.idDepartamento} - Nombre ${element.nombre}`);
-        });
-    });
   }
 
 
