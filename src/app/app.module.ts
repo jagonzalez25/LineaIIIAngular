@@ -13,6 +13,7 @@ import { EditarComponent } from './pages/editar/editar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DepartamentoComponent } from './pages/departamento/departamento.component';
 import { CiudadComponent } from './pages/departamento/ciudad/ciudad.component';
+import { VehiculoComponent } from './pages/vehiculo/vehiculo.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CiudadComponent } from './pages/departamento/ciudad/ciudad.component';
     BuscarComponent,
     EditarComponent,
     DepartamentoComponent,
-    CiudadComponent
+    CiudadComponent,
+    VehiculoComponent
   ],
   imports: [
     BrowserModule,

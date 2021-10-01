@@ -55,6 +55,12 @@
           <mat-icon>room</mat-icon>
           <span>Departamento</span>
         </button>
+        <mat-divider></mat-divider>     
+        
+        <button mat-menu-item (click)="drawer.toggle()" style="cursor: pointer" [routerLink]="['/vehiculo']">
+          <mat-icon>commute</mat-icon>
+          <span>Vehiculo</span>
+        </button>
         <mat-divider></mat-divider>          
       
     </mat-drawer>
