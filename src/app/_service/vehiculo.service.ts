@@ -16,4 +16,8 @@ export class VehiculoService {
       return this.http.post(`${this.url}/guardar`, vehiculo);
   }
 
+  public editar(vehiculo: Vehiculo){
+      return this.http.put(`${this.url}/editar`, vehiculo);
+  }
+
 }
