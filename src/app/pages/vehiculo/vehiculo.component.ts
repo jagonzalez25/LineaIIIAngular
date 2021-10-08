@@ -29,13 +29,6 @@ export class VehiculoComponent implements OnInit {
 
      this.vehiculoService.editar(vehiculo).subscribe(data =>{
         console.log("Vehiculo editado correctamente");
-      }, err => {
-        if(err.error.status == 500) {
-          this.openSnackBar("Error inesperado, comuniquese con el administrador");
-        } else{
-          this.openSnackBar(err.error.message);
-        }
-        
       });
 
 

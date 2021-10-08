@@ -10,10 +10,14 @@ import { MaterialModule} from './material/material.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { EditarComponent } from './pages/editar/editar.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DepartamentoComponent } from './pages/departamento/departamento.component';
 import { CiudadComponent } from './pages/departamento/ciudad/ciudad.component';
 import { VehiculoComponent } from './pages/vehiculo/vehiculo.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+
+import { ErrorInterceptorService } from './_share/error-interceptor.service';
+import { NotOkComponent } from './pages/not-ok/not-ok.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,9 @@ import { VehiculoComponent } from './pages/vehiculo/vehiculo.component';
     EditarComponent,
     DepartamentoComponent,
     CiudadComponent,
-    VehiculoComponent
+    VehiculoComponent,
+    NotFoundComponent,
+    NotOkComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,13 @@ import { VehiculoComponent } from './pages/vehiculo/vehiculo.component';
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:  HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptorService,
+      multi:    true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
