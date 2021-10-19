@@ -34,7 +34,9 @@ export class ErrorInterceptorService implements HttpInterceptor {
           console.log(err);
           if(err.error.status == 400) {
                 this.openSnackBar(err.error.message);
-          } else if(err.error.status == 404) {
+          } else if(err.status == 401) {  
+                 this.router.navigate(['/nopermiso']);
+          }  else if(err.error.status == 404) {
                 this.openSnackBar(err.error.message);
           } else if(err.error.status == 405) {
                 this.openSnackBar(err.error.message);

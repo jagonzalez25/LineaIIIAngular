@@ -18,6 +18,14 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 import { ErrorInterceptorService } from './_share/error-interceptor.service';
 import { NotOkComponent } from './pages/not-ok/not-ok.component';
+import { NotAllowedComponent } from './pages/not-allowed/not-allowed.component';
+import { environment } from 'src/environments/environment';
+import { JwtModule } from '@auth0/angular-jwt';
+
+export function tokenGetter() {
+  let tk = sessionStorage.getItem(environment.TOKEN);
+  return tk != null ? tk : '';
+}
 
 @NgModule({
   declarations: [
@@ -30,7 +38,8 @@ import { NotOkComponent } from './pages/not-ok/not-ok.component';
     CiudadComponent,
     VehiculoComponent,
     NotFoundComponent,
-    NotOkComponent
+    NotOkComponent,
+    NotAllowedComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +47,14 @@ import { NotOkComponent } from './pages/not-ok/not-ok.component';
     FormsModule, 
     MaterialModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ['143.244.150.210'],
+        disallowedRoutes: ['http://143.244.150.210/movitapp-backend/oauth/token'],
+      },
+    }),
   ],
   providers: [
     {
