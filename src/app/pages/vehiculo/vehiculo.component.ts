@@ -29,6 +29,9 @@ export class VehiculoComponent implements OnInit {
   ngOnInit(): void {
 
     this.listar();
+
+
+    
     /*let vehiculo: Vehiculo = new Vehiculo();
     vehiculo.idVehiculo = 5;
     vehiculo.placa = "akm-147";
@@ -39,6 +42,7 @@ export class VehiculoComponent implements OnInit {
 
     /*this.vehiculoService.guardar(vehiculo).subscribe(data =>{
         console.log("Se registro vehiculo");
+
     });*/
      /*this.barraDeProgresoService.progressBarReactiva.next(false);
      this.vehiculoService.editar(vehiculo).subscribe(data =>{
@@ -48,6 +52,7 @@ export class VehiculoComponent implements OnInit {
 
 
   }
+
 
   public cambioPagina(ev: any){
       this.pageSize = ev.pageSize;

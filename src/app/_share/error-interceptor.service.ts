@@ -28,8 +28,9 @@ export class ErrorInterceptorService implements HttpInterceptor {
         }*/
       }
     })).pipe(catchError((err) => {
-
+          
           this.barraDeProgresoService.progressBarReactiva.next(true);
+          
 
           console.log(err);
           if(err.error.status == 400) {
