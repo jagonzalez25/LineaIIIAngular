@@ -11,6 +11,10 @@ export class VehiculoService {
   private url: string = `${environment.HOST}/vehiculos`;
   
   constructor(private http: HttpClient) { }
+  
+  public listar(page: number, size: number){
+    return this.http.get<any>(`${this.url}/pageable?page=${page}&size=${size}`);
+ }
 
   public guardar(vehiculo: Vehiculo){
       return this.http.post(`${this.url}/guardar`, vehiculo);
