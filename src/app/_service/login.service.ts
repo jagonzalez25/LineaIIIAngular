@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,8 @@ import { Router } from '@angular/router';
 export class LoginService {
 
   private url: string = `${environment.HOST}/oauth/token`;
+
+  public toolBarReactiva = new Subject<boolean>();
 
   constructor(private http: HttpClient,
               private router: Router) { }
@@ -25,6 +28,7 @@ export class LoginService {
       const tk = sessionStorage.getItem(environment.TOKEN);
       this.http.get(`${environment.HOST}/cerrarSesion/anular/${tk}`).subscribe(data =>{
             sessionStorage.clear();
+            //this.toolBarReactiva.next(true);
             this.router.navigate(['login']);
       });
   }

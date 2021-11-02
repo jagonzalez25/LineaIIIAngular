@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
         console.log(decodedToken);*/
 
         sessionStorage.setItem(environment.TOKEN, data.access_token);
+        this.loginService.toolBarReactiva.next(false);
     });
   }
 

@@ -10,19 +10,22 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { NotOkComponent } from './pages/not-ok/not-ok.component';
 import { NotAllowedComponent } from './pages/not-allowed/not-allowed.component';
 import { LoginComponent } from './pages/login/login.component';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
+import { GuardianService } from './_share/guardian.service'
 
 
 const routes: Routes = [
   {path: '', component: BuscarComponent},
   {path: 'buscar', component: BuscarComponent},
-  {path: 'ingresar', component: RegistroComponent},
-  {path: 'editar', component: EditarComponent},
+  {path: 'ingresar', component: RegistroComponent, canActivate: [GuardianService]},
+  {path: 'editar', component: EditarComponent, canActivate: [GuardianService]},
   {path: 'departamento', component: DepartamentoComponent, children :[
-       {path:  'ciudad/:idDep', component: CiudadComponent}
-    ]
+       {path:  'ciudad/:idDep', component: CiudadComponent, canActivate: [GuardianService]}
+    ], canActivate: [GuardianService]
   },
   {path: 'login', component: LoginComponent},
-  {path: 'vehiculo', component: VehiculoComponent},
+  {path: 'vehiculo', component: VehiculoComponent, canActivate: [GuardianService]},
+  {path: 'usuario', component: UsuarioComponent, canActivate: [GuardianService]},
   {path: 'error', component: NotOkComponent},
   {path: 'nopermiso', component: NotAllowedComponent},
   {path: '**', component: NotFoundComponent}
