@@ -22,6 +22,7 @@ import { NotAllowedComponent } from './pages/not-allowed/not-allowed.component';
 import { environment } from 'src/environments/environment';
 import { JwtModule } from '@auth0/angular-jwt';
 import { UsuarioComponent } from './pages/usuario/usuario.component';
+import { AsociarComponent } from './pages/vehiculo/asociar/asociar.component';
 
 export function tokenGetter() {
   let tk = sessionStorage.getItem(environment.TOKEN);
@@ -41,7 +42,8 @@ export function tokenGetter() {
     NotFoundComponent,
     NotOkComponent,
     NotAllowedComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    AsociarComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +59,9 @@ export function tokenGetter() {
         disallowedRoutes: ['http://159.223.107.103:8080/movitapp-backend/oauth/token'],
       },
     }),
+  ],
+  entryComponents: [
+    AsociarComponent
   ],
   providers: [
     {

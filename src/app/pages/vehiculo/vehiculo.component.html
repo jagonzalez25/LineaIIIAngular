@@ -36,3 +36,19 @@
 
 <mat-paginator [pageSize]="pageSize" [length]="cantidad" [pageSizeOptions]="[5, 10, 25, 100]" #VehiculoPaginator 
             (page)="cambioPagina($event)"></mat-paginator>
+
+<br>
+<ol>
+    <li>
+      <mat-form-field>
+        <mat-label>Placa</mat-label>
+        <input matInput [(ngModel)]="placa">
+      </mat-form-field>
+    </li>
+    <li>
+      <button mat-raised-button (click)="openDialog()">Asociar</button>
+    </li>
+    <li *ngIf="resultadoDialogo">
+      You chose: <i>{{ resultadoDialogo }}</i>
+    </li> 
+</ol>         

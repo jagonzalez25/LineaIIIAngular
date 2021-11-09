@@ -6,6 +6,9 @@ import { Vehiculo } from 'src/app/_model/Vehiculo';
 import { BarraDeProgresoService } from 'src/app/_service/barra-de-progreso.service';
 import { VehiculoService } from 'src/app/_service/vehiculo.service';
 
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { AsociarComponent } from './asociar/asociar.component';
+
 @Component({
   selector: 'app-vehiculo',
   templateUrl: './vehiculo.component.html',
@@ -22,9 +25,13 @@ export class VehiculoComponent implements OnInit {
   pageIndex: number = 0;
   cantidad: number = 0;
 
+  public placa: string;
+  public resultadoDialogo: string;
+
   constructor(private vehiculoService: VehiculoService,
               private snackBar: MatSnackBar,
-              private barraDeProgresoService: BarraDeProgresoService) { }
+              private barraDeProgresoService: BarraDeProgresoService,
+              public dialog: MatDialog) { }
 
   ngOnInit(): void {
 
@@ -72,6 +79,21 @@ export class VehiculoComponent implements OnInit {
       duration: 2000,
       horizontalPosition: 'center',
       verticalPosition: 'top',
+    });
+  }
+
+  openDialog(): void {
+    let vehiculo = new Vehiculo();
+    vehiculo.placa = this.placa;
+    const dialogRef = this.dialog.open(AsociarComponent, {
+      width: '300px',
+      data: {vehiculo},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.resultadoDialogo = result;
+      
     });
   }
 
