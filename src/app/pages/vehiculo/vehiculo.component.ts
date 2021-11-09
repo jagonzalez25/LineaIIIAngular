@@ -87,13 +87,13 @@ export class VehiculoComponent implements OnInit {
     vehiculo.placa = this.placa;
     const dialogRef = this.dialog.open(AsociarComponent, {
       width: '300px',
-      data: {vehiculo},
+      data: vehiculo,
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.resultadoDialogo = result;
-      
+
     });
   }
 
