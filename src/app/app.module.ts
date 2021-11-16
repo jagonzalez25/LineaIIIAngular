@@ -23,6 +23,7 @@ import { environment } from 'src/environments/environment';
 import { JwtModule } from '@auth0/angular-jwt';
 import { UsuarioComponent } from './pages/usuario/usuario.component';
 import { AsociarComponent } from './pages/vehiculo/asociar/asociar.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 export function tokenGetter() {
   let tk = sessionStorage.getItem(environment.TOKEN);
@@ -55,8 +56,8 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        allowedDomains: ['159.223.107.103:8080'],
-        disallowedRoutes: ['http://159.223.107.103:8080/movitapp-backend/oauth/token'],
+        allowedDomains: ['159.223.107.103:8080'],//CAMBIAR A IP DE PRODUCCION
+        disallowedRoutes: ['http://159.223.107.103:8080/movitapp-backend/oauth/token'],//CAMBIAR A IP DE PRODUCCION
       },
     }),
   ],
@@ -68,6 +69,8 @@ export function tokenGetter() {
       provide:  HTTP_INTERCEPTORS,
       useClass: ErrorInterceptorService,
       multi:    true
+    }, {
+      provide: LocationStrategy, useClass: HashLocationStrategy
     }
   ],
   bootstrap: [AppComponent]
